@@ -1,0 +1,224 @@
+WEBVTT
+
+1
+00:00:00.460 --> 00:00:03.170
+Hey, I'm James Hahne, and this is
+PitchGuard XR.
+
+2
+00:00:03.170 --> 00:00:08.300
+I built it to help coaches spot risky
+pitching mechanics using just a phone video.
+
+3
+00:00:08.300 --> 00:00:11.550
+And these pitching injuries aren't just
+one in a thousand.
+
+4
+00:00:11.550 --> 00:00:16.940
+There was a study that followed 261 young
+pitchers with an average age of fourteen.
+
+5
+00:00:16.940 --> 00:00:21.090
+Over the span of ten years, one in four
+got a shoulder or elbow injury,
+
+6
+00:00:21.090 --> 00:00:24.160
+and about one in twenty required surgery
+from it.
+
+7
+00:00:24.160 --> 00:00:28.670
+Pro teams are able to catch these problems
+early on with motion capture labs.
+
+8
+00:00:28.670 --> 00:00:32.039
+Most youth pitchers don't have access to
+that.
+
+9
+00:00:32.040 --> 00:00:37.100
+What they do have is a phone video, but it's
+flat, and a fast arm turns into blur.
+
+10
+00:00:37.100 --> 00:00:38.340
+Let's look at an example.
+
+11
+00:00:42.880 --> 00:00:46.420
+If you pause right here, the elbow is not
+visible from this angle.
+
+12
+00:00:46.420 --> 00:00:48.420
+A coach can't tell much from it.
+
+13
+00:00:50.060 --> 00:00:53.980
+That's why I built PitchGuard XR, to get a
+lot more out of that phone video.
+
+14
+00:00:53.980 --> 00:00:59.130
+You film a pitch, and it turns it into a 3D
+model you can spin around and slow down.
+
+15
+00:00:59.130 --> 00:01:01.150
+Here's how it works.
+
+16
+00:01:01.150 --> 00:01:03.560
+First, the video goes through a program
+called Human3R,
+
+17
+00:01:03.560 --> 00:01:07.630
+which figures out the pitcher's 3D body
+and saves it to a data file.
+
+18
+00:01:07.630 --> 00:01:10.340
+Then, a Python script I wrote reads that
+file,
+
+19
+00:01:10.340 --> 00:01:13.680
+breaks the pitch into six phases, and
+scores its joint.
+
+20
+00:01:13.680 --> 00:01:16.820
+Unity takes all of that and draws it,
+which is what you're seeing.
+
+21
+00:01:18.860 --> 00:01:22.630
+Green means a joint looks fine, and red
+means a coach should take a look.
+
+22
+00:01:22.630 --> 00:01:24.360
+Watch the elbow turn red right there.
+
+23
+00:01:24.360 --> 00:01:25.740
+Let's get into the panels.
+
+24
+00:01:25.740 --> 00:01:27.210
+This is a data panel.
+
+25
+00:01:27.210 --> 00:01:31.730
+It shows how the arm is positioned and how much
+stress the shoulder and elbow are under
+
+26
+00:01:31.730 --> 00:01:33.200
+at each moment of the pitch.
+
+27
+00:01:33.200 --> 00:01:36.740
+It then boils that down into a simple risk
+level from low to high.
+
+28
+00:01:38.700 --> 00:01:40.570
+This is the fatigue monitor.
+
+29
+00:01:40.570 --> 00:01:44.120
+It tracks how tired the pitcher is getting
+as the pitch goes on.
+
+30
+00:01:44.120 --> 00:01:46.790
+Lastly, this is the control panel.
+
+31
+00:01:46.790 --> 00:01:49.310
+It has a timeline of risk across the whole
+pitch,
+
+32
+00:01:49.310 --> 00:01:51.790
+so you can see exactly where the danger
+spikes.
+
+33
+00:01:51.790 --> 00:01:54.530
+You can pause, step through frame by
+frame,
+
+34
+00:01:54.530 --> 00:01:57.710
+loop it, or slow it down to take a closer
+look.
+
+35
+00:01:57.710 --> 00:01:59.840
+The hardest part was the phases.
+
+36
+00:01:59.840 --> 00:02:02.390
+The 3D data is noisy, so in my Python
+code,
+
+37
+00:02:02.390 --> 00:02:05.390
+a pitch kept flipping back and forth
+between phases.
+
+38
+00:02:05.390 --> 00:02:06.830
+I fixed it two ways.
+
+39
+00:02:06.830 --> 00:02:09.400
+I capped joint speeds that were
+impossible,
+
+40
+00:02:09.400 --> 00:02:13.210
+and I made each phase hold for a few
+frames before it could switch.
+
+41
+00:02:13.210 --> 00:02:15.760
+Then I checked it by hand on thirty-five
+clips.
+
+42
+00:02:15.760 --> 00:02:19.990
+But these scores are just estimates, not
+medical advice.
+
+43
+00:02:20.800 --> 00:02:23.640
+Next, I want to compare them to real lab
+motion capture data,
+
+44
+00:02:23.640 --> 00:02:28.100
+test it with more coaches and pitchers,
+and follow pitchers across a season.
+
+45
+00:02:28.100 --> 00:02:30.990
+I learned how to take messy real-world
+data and
+
+46
+00:02:30.990 --> 00:02:33.100
+turn it into something a coach can
+actually use.
+
+47
+00:02:33.100 --> 00:02:34.700
+Thanks for watching.

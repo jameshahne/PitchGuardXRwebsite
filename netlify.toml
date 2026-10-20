@@ -1,0 +1,37 @@
+# Static site: no build step. Netlify publishes the repo root.
+[build]
+  publish = "."
+
+# Unity WebGL builds can be Brotli or Gzip compressed (Player Settings > Publishing Settings).
+# These headers tell the browser how to read those files. If you export with
+# "Compression Format: Disabled", they are simply never used.
+[[headers]]
+  for = "/unity/Build/*.wasm.br"
+  [headers.values]
+    Content-Type = "application/wasm"
+    Content-Encoding = "br"
+[[headers]]
+  for = "/unity/Build/*.js.br"
+  [headers.values]
+    Content-Type = "application/javascript"
+    Content-Encoding = "br"
+[[headers]]
+  for = "/unity/Build/*.data.br"
+  [headers.values]
+    Content-Type = "application/octet-stream"
+    Content-Encoding = "br"
+[[headers]]
+  for = "/unity/Build/*.wasm.gz"
+  [headers.values]
+    Content-Type = "application/wasm"
+    Content-Encoding = "gzip"
+[[headers]]
+  for = "/unity/Build/*.js.gz"
+  [headers.values]
+    Content-Type = "application/javascript"
+    Content-Encoding = "gzip"
+[[headers]]
+  for = "/unity/Build/*.data.gz"
+  [headers.values]
+    Content-Type = "application/octet-stream"
+    Content-Encoding = "gzip"

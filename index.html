@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>PitchGuard XR</title>
+  <meta name="description" content="PitchGuard XR turns a phone video of a pitch into a 3D model and scores the stress on each joint, so coaches can spot risky mechanics early.">
+  <meta property="og:title" content="PitchGuard XR">
+  <meta property="og:description" content="3D pitching mechanics from a phone video. 2026 Congressional App Challenge, Texas 31st District.">
+  <meta name="theme-color" content="#0b1020">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="./" aria-label="PitchGuard XR home">
+        <img src="assets/logo.jpg" width="40" height="40" alt="">
+        <b>PitchGuard XR</b>
+      </a>
+      <p class="who">James Hahne <span aria-hidden="true">/</span> Stony Point High School <span aria-hidden="true">/</span> Texas 31st District</p>
+    </header>
+
+    <main>
+      <div class="intro">
+        <div class="tag"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span> 2026 Congressional App Challenge</div>
+        <h1>3D pitching mechanics from a phone video.</h1>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Demo views">
+        <button class="tab" role="tab" id="tab-watch" aria-controls="panel-watch" aria-selected="true" type="button">
+          <span class="tab-title">Watch the demo</span>
+          <span class="tab-sub">Video</span>
+        </button>
+        <button class="tab" role="tab" id="tab-play" aria-controls="panel-play" aria-selected="false" tabindex="-1" type="button">
+          <span class="tab-title">Try it yourself</span>
+          <span class="tab-sub">Interactive 3D</span>
+        </button>
+      </div>
+
+      <section class="panel" id="panel-watch" role="tabpanel" aria-labelledby="tab-watch">
+        <div class="stage">
+          <video controls preload="metadata" playsinline poster="assets/poster.jpg">
+            <source src="assets/pitchguard-xr-demo.mp4" type="video/mp4">
+            <track kind="captions" src="assets/captions.vtt" srclang="en" label="English" default>
+            Your browser can't play this video.
+          </video>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-play" role="tabpanel" aria-labelledby="tab-play" hidden>
+        <div class="stage" id="play-stage">
+          <div class="gate" id="gate">
+            <p class="gate-title">A real pitch, running in your browser.</p>
+            <p class="gate-text">Pause it, step through frame by frame, slow it down, and watch the risk and fatigue panels change.</p>
+            <button class="btn" id="load-btn" type="button">Load the 3D demo</button>
+            <p class="gate-note">Loads a few MB. Works best on a laptop or desktop.</p>
+          </div>
+          <iframe id="unity-frame" title="PitchGuard XR interactive 3D demo" allow="fullscreen; autoplay" allowfullscreen hidden></iframe>
+        </div>
+        <div class="bar" id="bar" hidden>
+          <ul class="tips">
+            <li>Press <b>Pause</b>, then <b>Step</b> through the pitch one frame at a time.</li>
+            <li>Slow the playback to <b>0.25x</b> and watch the arm.</li>
+            <li>Drag the <b>timeline</b> to see where the risk spikes.</li>
+          </ul>
+          <div class="bar-actions">
+            <button class="btn ghost" id="fs-btn" type="button">Full screen</button>
+            <a class="btn ghost" href="unity/index.html" target="_blank" rel="noopener">Open in new tab</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Risk scores are estimates, not medical advice.</p>
+    </footer>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>
