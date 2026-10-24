@@ -31,27 +31,17 @@
       </div>
 
       <div class="tabs" role="tablist" aria-label="Demo views">
-        <button class="tab" role="tab" id="tab-watch" aria-controls="panel-watch" aria-selected="true" type="button">
-          <span class="tab-title">Watch the demo</span>
-          <span class="tab-sub">Video</span>
-        </button>
-        <button class="tab" role="tab" id="tab-play" aria-controls="panel-play" aria-selected="false" tabindex="-1" type="button">
+        <button class="tab" role="tab" id="tab-play" aria-controls="panel-play" aria-selected="true" type="button">
           <span class="tab-title">Try it yourself</span>
           <span class="tab-sub">Interactive 3D</span>
         </button>
+        <button class="tab" role="tab" id="tab-watch" aria-controls="panel-watch" aria-selected="false" tabindex="-1" type="button">
+          <span class="tab-title">Watch the demo</span>
+          <span class="tab-sub">Video</span>
+        </button>
       </div>
 
-      <section class="panel" id="panel-watch" role="tabpanel" aria-labelledby="tab-watch">
-        <div class="stage">
-          <video controls preload="metadata" playsinline poster="assets/poster.jpg">
-            <source src="assets/pitchguard-xr-demo.mp4" type="video/mp4">
-            <track kind="captions" src="assets/captions.vtt" srclang="en" label="English" default>
-            Your browser can't play this video.
-          </video>
-        </div>
-      </section>
-
-      <section class="panel" id="panel-play" role="tabpanel" aria-labelledby="tab-play" hidden>
+      <section class="panel" id="panel-play" role="tabpanel" aria-labelledby="tab-play">
         <div class="stage" id="play-stage">
           <div class="gate" id="gate">
             <p class="gate-title">A real pitch, running in your browser.</p>
@@ -61,24 +51,31 @@
           </div>
           <iframe id="unity-frame" title="PitchGuard XR interactive 3D demo" allow="fullscreen; autoplay" allowfullscreen hidden></iframe>
         </div>
-<div class="bar" id="bar" hidden>
-  <div class="bar-main">
-    <ul class="tips">
-      <li><b>LOADING MIGHT TAKE FROM 30 SECONDS TO FEW MINUTES DEPENDING ON YOUR CONNECTION!! Please be patient</b></li>
-      <li>Press <b>Pause</b>, then <b>Step</b> through the pitch one frame at a time.</li>
-      <li>Slow the playback to <b>0.25x</b> and watch the arm.</li>
-      <li>Move your <b>mouse</b> around to rotate the view. <b>Scroll</b> to zoom in/out.</li>
-    </ul>
-    <img class="tips-gif" src="assets/pitch.gif" alt="Pitcher mid-delivery" loading="lazy">
-  </div>
-  <div class="bar-actions">
-    <button class="btn ghost" id="fs-btn" type="button">Full screen</button>
-    <a class="btn ghost" href="unity/index.html" target="_blank" rel="noopener">Open in new tab</a>
-  </div>
-</div>
+
+        <div class="bar" id="bar" hidden>
+          <div class="bar-main">
+            <ul class="tips">
+              <li><b>LOADING MIGHT TAKE FROM 30 SECONDS TO FEW MINUTES DEPENDING ON YOUR CONNECTION!! Please be patient</b></li>
+              <li>Press <b>Pause</b>, then <b>Step</b> through the pitch one frame at a time.</li>
+              <li>Slow the playback to <b>0.25x</b> and watch the arm.</li>
+              <li>Move your <b>mouse</b> around to rotate the view. <b>Scroll</b> to zoom in/out.</li>
+            </ul>
+            <img class="tips-gif" src="assets/pitch.gif" alt="Pitcher mid-delivery" loading="lazy">
+          </div>
+          <div class="bar-actions">
             <button class="btn ghost" id="fs-btn" type="button">Full screen</button>
             <a class="btn ghost" href="unity/index.html" target="_blank" rel="noopener">Open in new tab</a>
           </div>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-watch" role="tabpanel" aria-labelledby="tab-watch" hidden>
+        <div class="stage">
+          <video controls preload="metadata" playsinline poster="assets/poster.jpg">
+            <source src="assets/pitchguard-xr-demo.mp4" type="video/mp4">
+            <track kind="captions" src="assets/captions.vtt" srclang="en" label="English" default>
+            Your browser can't play this video.
+          </video>
         </div>
       </section>
     </main>
