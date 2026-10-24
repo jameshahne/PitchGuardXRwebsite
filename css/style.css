@@ -88,9 +88,15 @@ h1 { margin: 0; font: 800 clamp(2rem, 4.6vw, 3.3rem)/1.02 var(--f-display); font
 
 /* tips + GIF side by side */
 .bar-main { display: flex; align-items: center; gap: 24px; flex: 1 1 520px; min-width: 0; }
+
+.tips-fig { margin: 0; flex-shrink: 0; width: 160px; display: grid; gap: 6px; }
+.tips-fig figcaption {
+  font: 500 .75rem/1.2 var(--f-mono); letter-spacing: .08em;
+  text-transform: uppercase; color: var(--muted);
+}
 .tips-gif {
-  width: 240px; max-width: 40%; height: auto; flex-shrink: 0;
-  border-radius: 8px; border: 1px solid var(--line-strong); display: block;
+  width: 100%; height: auto; display: block;
+  border-radius: 8px; border: 1px solid var(--line-strong);
 }
 
 @media (max-width: 700px) {
@@ -100,7 +106,7 @@ h1 { margin: 0; font: 800 clamp(2rem, 4.6vw, 3.3rem)/1.02 var(--f-display); font
 
   /* stack tips and GIF on phones */
   .bar-main { flex-direction: column; align-items: flex-start; }
-  .tips-gif { width: 100%; max-width: 100%; }
+  .tips-fig { width: 140px; }
 }
 
 footer { margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--line); font: 400 .8rem var(--f-mono); color: var(--muted); }
