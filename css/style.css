@@ -78,6 +78,7 @@ h1 { margin: 0; font: 800 clamp(2rem, 4.6vw, 3.3rem)/1.02 var(--f-display); font
 .btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--line-strong); padding: 10px 16px; font-size: .88rem; }
 .btn.ghost:hover { background: var(--surface); filter: none; }
 
+/* tips bar */
 .bar { display: flex; gap: 16px 28px; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; margin-top: 16px; }
 .tips { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; color: var(--muted); font-size: .95rem; max-width: 60ch; }
 .tips li { padding-left: 16px; position: relative; }
@@ -85,10 +86,21 @@ h1 { margin: 0; font: 800 clamp(2rem, 4.6vw, 3.3rem)/1.02 var(--f-display); font
 .tips b { color: var(--ink); font-weight: 600; }
 .bar-actions { display: flex; gap: 10px; flex-wrap: wrap; }
 
+/* tips + GIF side by side */
+.bar-main { display: flex; align-items: center; gap: 24px; flex: 1 1 520px; min-width: 0; }
+.tips-gif {
+  width: 240px; max-width: 40%; height: auto; flex-shrink: 0;
+  border-radius: 8px; border: 1px solid var(--line-strong); display: block;
+}
+
 @media (max-width: 700px) {
   .stage { width: 100%; }
   #play-stage { aspect-ratio: 4 / 5; }
   .gate { padding: 18px; gap: 10px; }
+
+  /* stack tips and GIF on phones */
+  .bar-main { flex-direction: column; align-items: flex-start; }
+  .tips-gif { width: 100%; max-width: 100%; }
 }
 
 footer { margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--line); font: 400 .8rem var(--f-mono); color: var(--muted); }
